@@ -13,7 +13,8 @@ const UsersPage = () => {
     queryKey: ["users"],
     queryFn: fetchUsers,
     //gcTime:5000,
-    staleTime:120*1000,
+    //staleTime:120*1000,
+    refetchOnMount:flase
     
   });
   if (isLoading) return <h1>Loading...</h1>;
