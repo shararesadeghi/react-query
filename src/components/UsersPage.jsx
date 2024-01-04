@@ -15,7 +15,8 @@ const UsersPage = () => {
     //gcTime:5000,
     //staleTime:120*1000,
    // refetchOnMount:flase,
-   refetchOnWindowFocus:false,
+   //refetchOnWindowFocus:false,
+   refetchInterval:2 * 1000,
     
   });
   if (isLoading) return <h1>Loading...</h1>;
