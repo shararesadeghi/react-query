@@ -14,7 +14,8 @@ const UsersPage = () => {
     queryFn: fetchUsers,
     //gcTime:5000,
     //staleTime:120*1000,
-    refetchOnMount:flase
+   // refetchOnMount:flase,
+   refetchOnWindowFocus:false,
     
   });
   if (isLoading) return <h1>Loading...</h1>;
