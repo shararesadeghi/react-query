@@ -12,7 +12,8 @@ const UsersPage = () => {
   const { data, isLoading, isError, error, isFetching } = useQuery({
     queryKey: ["users"],
     queryFn: fetchUsers,
-    gcTime:5000
+    //gcTime:5000,
+    staleTime:120*1000,
     
   });
   if (isLoading) return <h1>Loading...</h1>;
