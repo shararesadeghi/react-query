@@ -11,8 +11,9 @@ const HomePage = () => {
     const fetchUsers = () =>
       axios.get("https://jsonplaceholder.typicode.com/users");
 
-    const {data,isLoading} = useQuery({queryKey:["users"],queryFn:fetchUsers})
+    const {data,isLoading,isError,error} = useQuery({queryKey:["users"],queryFn:fetchUsers})
    if(isLoading) return <h1>Loading...</h1>
+   if(isError) return <h3>Something went wrong - {error.message}</h3>
 //   return (
 //     <div>{data.map(item=><h3 key={item.id}>{item.name}</h3>)}</div>
 //   )
