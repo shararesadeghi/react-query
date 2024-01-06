@@ -1,27 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useUserData } from "../hooks/queries";
 
 const UsersPage = () => {
   // const fetchUsers = async ()=>{
   //     const res = await fetch("https://jsonplaceholder.typicode.com/users");
   //     return res.json();
   // }
-  const fetchUsers = () =>
-    axios.get("https://jsonplaceholder.typicode.com/users");
 
-  const { data, isLoading, isError, error, isFetching, refetch } = useQuery({
-    queryKey: ["users"],
-    queryFn: fetchUsers,
-    //gcTime:5000,
-    //staleTime:120*1000,
-   // refetchOnMount:false,
-   //refetchOnWindowFocus:false,
-  // refetchInterval:2 * 1000,
-  enabled:false,
-  
-    
-  });
+  const { data, isLoading, isError, error, isFetching, refetch } = useUserData();
  // if (isLoading) return <h1>Loading...</h1>;
 //if (isError) return <h3>Something went wrong - {error.message}</h3>;
   //   return (
